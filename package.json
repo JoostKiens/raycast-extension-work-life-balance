@@ -1,0 +1,47 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "work-life-balance",
+  "title": "Work life balance",
+  "description": "Prepares my computer for work and relaxation.",
+  "icon": "command-icon.png",
+  "author": "Joost",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "start-working",
+      "title": "Start working",
+      "subtitle": "Time to make money!",
+      "description": "Starts up various applications, unmutes notifications and switches de default browser.",
+      "mode": "view"
+    },
+    {
+      "name": "stop-working",
+      "title": "Stop working",
+      "subtitle": "Time to chill",
+      "description": "Quits up various applications, mutes notifications and switches de default browser.",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.28.0",
+    "run-applescript": "^6.0.0",
+    "use-is-mounted-ref": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "~16.10.0",
+    "@types/react": "^17.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "react-devtools": "^4.19.2",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint"
+  }
+}
