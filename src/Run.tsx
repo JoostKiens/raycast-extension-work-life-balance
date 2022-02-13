@@ -3,14 +3,10 @@ import { useEffect, useCallback } from "react";
 import {  List } from "@raycast/api";
 import useIsMountedRef from "use-is-mounted-ref";
 import { showToast, Toast } from "@raycast/api";
-import { useStore, Item, State } from './useStore'
+import { useStore } from './useStore'
+import { State, Item, Msg } from './types'
 
-interface Result {
-  title: string
-  message?: string
-}
-
-export const Run = (props: ({ commands: State; errorMsg: Result; successMsg: Result })) => {
+export const Run = (props: ({ commands: State; errorMsg: Msg; successMsg: Msg })) => {
   const isMountedRef = useIsMountedRef();
   const [data, storeApi] = useStore(props.commands)
 
