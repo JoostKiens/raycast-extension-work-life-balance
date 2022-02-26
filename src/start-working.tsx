@@ -3,24 +3,19 @@ import { Run } from './Run'
 const commands = {
   items: [
     {
-      key: "defaultBowser",
-      title: "Set default browser",
-      script: "do shell script (\"open -a 'Firefox Developer Edition' --args --make-default-browser\")",
+      key: 'showDesktop',
+      title: 'Hide all applications',
+      script: `
+      tell application "Finder"
+          set visible of every process whose visible is true and name is not "Finder" to false
+          set the collapsed of windows to true
+      end tell
+      `
     },
     {
-      key: "firefox",
-      title: "Open Firefox Developer Edition",
-      script: 'tell application "Firefox Developer Edition" to activate',
-    },
-    {
-      key: "discord",
-      title: "Open Discord",
-      script: 'tell application "Discord" to activate',
-    },
-    {
-      key: "msteams",
-      title: "Open Microsoft Teams",
-      script: 'tell application "Microsoft Teams" to activate',
+      key: "unmute",
+      title: "Unmute",
+      script: 'set volume output muted false',
     },
     {
       key: "vscode",
@@ -28,10 +23,20 @@ const commands = {
       script: 'tell application "Visual Studio Code" to activate',
     },
     {
-      key: "unmute",
-      title: "Unmute",
-      script: 'set volume output muted false',
-    }
+      key: "defaultBowser",
+      title: "Set default browser",
+      script: "do shell script (\"open -a 'Firefox Developer Edition' --args --make-default-browser\")",
+    },
+    {
+      key: "msteams",
+      title: "Open Microsoft Teams",
+      script: 'tell application "Microsoft Teams" to activate',
+    },
+    {
+      key: "discord",
+      title: "Open Discord",
+      script: 'tell application "Discord" to activate',
+    },
   ],
 };
 

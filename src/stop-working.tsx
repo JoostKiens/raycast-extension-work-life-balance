@@ -3,6 +3,11 @@ import { Run } from './Run'
 const commands = {
   items: [
     {
+      key: "mute",
+      title: "Mute",
+      script: 'set volume output muted true',
+    },
+    {
       key: "defaultBowser",
       title: "Set default browser",
       script: "do shell script (\"open -a 'Firefox' --args --make-default-browser\")",
@@ -26,16 +31,6 @@ const commands = {
       key: "discord",
       title: "Quit Discord",
       script: 'quit app "Discord"',
-    },
-    {
-      key: "firefox",
-      title: "Open Firefox",
-      script: 'tell application "Firefox" to activate',
-    },
-    {
-      key: "mute",
-      title: "Mute",
-      script: 'set volume output muted true',
     }
   ],
 };
