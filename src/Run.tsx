@@ -10,7 +10,6 @@ export const Run = (props: ({ commands: State; errorMsg: Msg; successMsg: Msg })
   const isMountedRef = useIsMountedRef();
   const [data, storeApi] = useStore(props.commands)
 
-
   const runCommands = useCallback(
     async () => {
       await Promise.all(
@@ -57,14 +56,12 @@ export const Run = (props: ({ commands: State; errorMsg: Msg; successMsg: Msg })
   }
 
   return (
-    <>
       <List isLoading={!data.items && !data.error}>
         {data.items?.map((item, index) => (
           <CommandListItem key={item.key} item={item} index={index} />
         ))}
       </List>
-    </>
-  );
+  )
 }
 
 function CommandListItem(props: { item: Item; index: number }) {
