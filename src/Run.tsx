@@ -25,7 +25,7 @@ export const Run = (props: ({ commands: State; errorMsg: Msg; successMsg: Msg })
         })
       );
     },
-    [storeApi, props.commands.items]
+    [storeApi, props.commands.items, isMountedRef]
   )
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const Run = (props: ({ commands: State; errorMsg: Msg; successMsg: Msg })
         if (isMountedRef.current) storeApi.failure(error as Error)
       }
     })()
-  }, [storeApi, runCommands])
+  }, [storeApi, runCommands, isMountedRef])
 
 
   if (data.error) {
